@@ -86,12 +86,12 @@ syn region mkdLinkTitle matchgroup=mkdDelimiter start=+'+     end=+'+  contained
 syn region mkdLinkTitle matchgroup=mkdDelimiter start=+(+     end=+)+  contained
 
 "HTML headings
-syn region htmlH1       matchgroup=mkdHeading     start="^\s*#"                   end="$" contains=mkdLink,mkdInlineURL,@Spell
-syn region htmlH2       matchgroup=mkdHeading     start="^\s*##"                  end="$" contains=mkdLink,mkdInlineURL,@Spell
-syn region htmlH3       matchgroup=mkdHeading     start="^\s*###"                 end="$" contains=mkdLink,mkdInlineURL,@Spell
-syn region htmlH4       matchgroup=mkdHeading     start="^\s*####"                end="$" contains=mkdLink,mkdInlineURL,@Spell
-syn region htmlH5       matchgroup=mkdHeading     start="^\s*#####"               end="$" contains=mkdLink,mkdInlineURL,@Spell
-syn region htmlH6       matchgroup=mkdHeading     start="^\s*######"              end="$" contains=mkdLink,mkdInlineURL,@Spell
+syn region htmlH1       matchgroup=mkdHeadingDelimiter     start="^\s*#"                   end="$" contains=mkdLink,mkdInlineURL,@Spell
+syn region htmlH2       matchgroup=mkdHeadingDelimiter     start="^\s*##"                  end="$" contains=mkdLink,mkdInlineURL,@Spell
+syn region htmlH3       matchgroup=mkdHeadingDelimiter     start="^\s*###"                 end="$" contains=mkdLink,mkdInlineURL,@Spell
+syn region htmlH4       matchgroup=mkdHeadingDelimiter     start="^\s*####"                end="$" contains=mkdLink,mkdInlineURL,@Spell
+syn region htmlH5       matchgroup=mkdHeadingDelimiter     start="^\s*#####"               end="$" contains=mkdLink,mkdInlineURL,@Spell
+syn region htmlH6       matchgroup=mkdHeadingDelimiter     start="^\s*######"              end="$" contains=mkdLink,mkdInlineURL,@Spell
 syn match  htmlH1       /^.\+\n=\+$/ contains=mkdLink,mkdInlineURL,@Spell
 syn match  htmlH2       /^.\+\n-\+$/ contains=mkdLink,mkdInlineURL,@Spell
 
@@ -172,13 +172,14 @@ HtmlHiLink mkdRule             Identifier
 HtmlHiLink mkdLineBreak        Visual
 HtmlHiLink mkdFootnotes        htmlLink
 HtmlHiLink mkdLink             htmlLink
-HtmlHiLink mkdURL              htmlString
+HtmlHiLink mkdURL              Float
 HtmlHiLink mkdInlineURL        htmlLink
 HtmlHiLink mkdID               Identifier
 HtmlHiLink mkdLinkDef          mkdID
 HtmlHiLink mkdLinkDefTarget    mkdURL
 HtmlHiLink mkdLinkTitle        htmlString
 HtmlHiLink mkdDelimiter        Delimiter
+HtmlHiLink mkdHeadingDelimiter Delimiter
 
 let b:current_syntax = 'mkd'
 
