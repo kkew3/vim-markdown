@@ -160,7 +160,7 @@ syn cluster mkdNonListItem contains=@htmlTop,htmlItalic,htmlBold,htmlBoldItalic,
 
 "highlighting for Markdown groups
 HtmlHiLink mkdString           String
-HtmlHiLink mkdCode             String
+HtmlHiLink mkdCode             htmlArg
 HtmlHiLink mkdCodeDelimiter    String
 HtmlHiLink mkdCodeStart        String
 HtmlHiLink mkdCodeEnd          String
@@ -178,8 +178,11 @@ HtmlHiLink mkdID               Identifier
 HtmlHiLink mkdLinkDef          mkdID
 HtmlHiLink mkdLinkDefTarget    mkdURL
 HtmlHiLink mkdLinkTitle        htmlString
-HtmlHiLink mkdDelimiter        Delimiter
+HtmlHiLink mkdDelimiter        Comment
 HtmlHiLink mkdHeadingDelimiter Delimiter
+HtmlHiLink mkdItalic           mkdDelimiter
+HtmlHiLink mkdBold             mkdDelimiter
+HtmlHiLink mkdBoldItalic       mkdDelimiter
 
 let b:current_syntax = 'mkd'
 
